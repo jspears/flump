@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "suppressExcessPropertyErrors": true,
+    "declaration": true,
+    "outDir": "lib",
+    "sourceRoot": "src",
+    "target": "es6",
+    "strictNullChecks": false,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "webworker",
+      "es2018"
+    ]
+  },
+  "include": [
+    "./src",
+    "./test",
+    "./public"
+  ]
+}

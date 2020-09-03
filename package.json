@@ -1,0 +1,19 @@
+{
+  "name": "@flump/flump-project",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "./actions/*",
+      "./prompts/*",
+      "./examples/*",
+      "./core/*",
+      "builder"
+    ]
+  },
+  "scripts": {
+    "link": "lerna exec yarn link",
+    "unlink": "lerna exec yarn unlink",
+    "test": "lerna run test",
+    "prepare": "lerna run prepare"
+  }
+}

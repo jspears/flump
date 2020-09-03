@@ -1,0 +1,17 @@
+{
+  "name": "@flump/registry",
+  "version": "0.0.1",
+  "description": "",
+  "types": "src",
+  "main": "lib",
+  "source": "src",
+  "scripts": {
+    "prepare": "tsc",
+    "test": "mrbuilder"
+  },
+  "author": "Justin Spears <speajus@gmail.com>",
+  "license": "BSD0",
+  "devDependencies": {
+    "@flump/builder": "^0.0.1"
+  }
+}

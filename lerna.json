@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "gitRemote": "origin"
+    },
+    "run": {
+      "stream": true
+    }
+  },
+  "useWorkspaces": true}

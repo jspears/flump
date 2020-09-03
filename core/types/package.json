@@ -1,0 +1,28 @@
+{
+  "name": "@flump/types",
+  "version": "0.0.1",
+  "description": "",
+  "types": "src",
+  "main": "lib",
+  "source": "src",
+  "scripts": {
+    "prepare": "flump-builder-tsc",
+    "test": "mrbuilder"
+  },
+  "author": "Justin Spears <speajus@gmail.com>",
+  "license": "BSD0",
+  "dependencies": {
+    "@flump/prompt-input": "^0.0.1",
+    "@flump/registry": "^0.0.1",
+    "handlebars": "^4.7.6",
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "@flump/builder": "^0.0.1"
+  },
+  "mrbuilder": {
+    "plugins": [
+      "@mrbuilder/plugin-typescript"
+    ]
+  }
+}

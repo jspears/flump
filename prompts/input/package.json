@@ -1,0 +1,16 @@
+{
+  "name": "@flump/prompt-input",
+  "version": "0.0.1",
+  "types": "src",
+  "main": "lib",
+  "source": "src",
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "dependencies": {
+    "@flump/registry": "^0.0.1"
+  },
+  "devDependencies": {
+    "@flump/builder": "^0.0.1"
+  }
+}
