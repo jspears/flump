@@ -1,4 +1,4 @@
-import {registerPromptType} from '@flump/registry';
+import {promptTypes} from '@flump/registry';
 
 type ResultFn = (result: unknown) => string | Promise<string>;
 export type InputPrompt = {
@@ -11,6 +11,6 @@ declare module '@flump/registry' {
     }
 }
 
-registerPromptType('input', async (result, config) => {
-    
+promptTypes.set('input', async (result, config) => {
+
 })

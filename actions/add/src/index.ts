@@ -1,4 +1,4 @@
-import {registerActionType} from '@flump/registry';
+import {actionTypes} from '@flump/registry';
 
 
 type ResultString = (result: unknown) => string | Promise<string>;
@@ -16,7 +16,7 @@ declare module '@flump/registry' {
 }
 
 
-registerActionType('add', (a, conf) => {
+actionTypes.set('add', (a, conf) => {
     console.log('conf', conf);
     return;
 });

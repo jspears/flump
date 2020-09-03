@@ -1,4 +1,4 @@
-import {registerActionType} from "@flump/registry";
+import {actionTypes} from "@flump/registry";
 import {command, Options} from 'execa';
 
 export type ExecConfig = {
@@ -8,12 +8,12 @@ export type ExecConfig = {
 }
 
 declare module '@flump/registry' {
-     interface ActionTypes {
+    interface ActionTypes {
         exec: ExecConfig;
     }
 }
 
-registerActionType('exec', async (result, conf) => {
+actionTypes.set('exec', async (result, conf) => {
 
     await command(conf.command, conf.options);
 });
