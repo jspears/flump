@@ -2,7 +2,7 @@
   "name": "@flump/action-exec",
   "version": "0.0.1",
   "scripts": {
-    "prepare": "flump-builder-tsc"
+    "prepare": "tsc"
   },
   "devDependencies": {
     "@flump/builder": "^0.0.1"

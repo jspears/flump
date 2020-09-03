@@ -1,6 +1,2 @@
-
-export interface PromptTypes extends Record<string, unknown> {
-}
-
-export interface ActionTypes extends Record<string, unknown> {
-}
+export * from './types';
+export * from './registry';
