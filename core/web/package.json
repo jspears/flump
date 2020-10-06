@@ -1,0 +1,23 @@
+{
+  "name": "@flump/web",
+  "version": "0.0.1",
+  "description": "",
+  "types": "src",
+  "main": "lib",
+  "source": "src",
+  "scripts": {
+    "start": "flump-builder",
+    "prepare": "tsc",
+    "test": "MRBUILDER_PROFILE=test flump-builder-test"
+  },
+  "author": "Justin Spears <speajus@gmail.com>",
+  "license": "BSD0",
+  "dependencies": {
+    "@flump/registry": "^0.0.1",
+    "@flump/utils": "^0.0.1",
+    "@flump/prompt-select": "^0.0.1"
+  },
+  "devDependencies": {
+    "@flump/builder": "^0.0.1"
+  }
+}

@@ -1,15 +1,21 @@
-import {ActionFn, ActionTypes, Context, FilterTypes, PromptFn, PromptTypes} from "./types";
+import {Action, ActionTypes, FilterTypes, Prompt, PromptTypes, RegFn} from "./types";
 
-class Registry<Types, Fn = (result: unknown, conf: Types[keyof Types], context: Context) => Promise<unknown>> {
-    private map = new Map<keyof Types, Fn>();
 
-    set(name: keyof Types, fn: Fn): this {
+export class Registry<Types, C = {}> {
+    constructor(private map = new Map<string | keyof Types, RegFn<any>>()) {
+    }
+
+    register<T extends keyof Types | string>(name: T, fn: T extends keyof Types ? RegFn<Types[T] & C> : RegFn<C>): this {
         this.map.set(name, fn);
         return this;
     }
 
-    resolve(name: keyof Types): Fn | undefined {
-        return this.map.get(name);
+    resolve<T extends keyof Types | string>(name: T): T extends keyof Types ? RegFn<Types[T] & C> : RegFn<C> {
+        const result = this.map.get(name);
+        if (result === void (0)) {
+            throw new Error(`'${name}': is not registered`)
+        }
+        return result as any;
     }
 }
 
@@ -22,13 +28,14 @@ export type FilterConfig<T> = {
  * from users.  The have functions for transorming and validating
  * such content.
  */
-export const promptTypes = new Registry<PromptTypes, PromptFn>();
+export const promptTypes = new Registry<PromptTypes, Prompt>();
 /**
  * Actions are executed using the answers provided by the prompts.
  */
-export const actionTypes = new Registry<ActionTypes, ActionFn>();
+export const actionTypes = new Registry<ActionTypes, Action>();
+
 /**
  * Filters are functions, that convert some (string) input before ouputing.
  * They can be templates, strings, or even code formatters like prettier.
  */
-export const filterTypes = new Registry<FilterTypes, (source: string, config: FilterConfig<FilterTypes[keyof FilterTypes]>, context: Context) => Promise<string>>();
+export const filterTypes = new Registry<FilterTypes>();

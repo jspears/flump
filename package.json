@@ -11,6 +11,8 @@
     ]
   },
   "scripts": {
+    "tsconfig": "yarn workspaces --silent info | jq '{extends:\"./tsconfig.base.json\", references:[ .[] | {path:.location}]}' > ./tsconfig.json",
+    "watch": "yarn workspaces --silent info | jq '.[] | .location' ",
     "link": "lerna exec yarn link",
     "unlink": "lerna exec yarn unlink",
     "test": "lerna run test",

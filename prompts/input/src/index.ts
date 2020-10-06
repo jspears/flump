@@ -1,16 +1,5 @@
 import {promptTypes} from '@flump/registry';
 
-type ResultFn = (result: unknown) => string | Promise<string>;
-export type InputPrompt = {
-    placeholder?: ResultFn;
-}
-
-declare module '@flump/registry' {
-    interface PromptTypes {
-        input: InputPrompt;
-    }
-}
-
-promptTypes.set('input', async (result, config) => {
-
-})
+promptTypes.register('input', (config, context) => async (results) => {
+    console.log('input', config.placeholder ? 'true' : 'false');
+});

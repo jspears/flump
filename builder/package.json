@@ -8,11 +8,14 @@
     "@mrbuilder/plugin-babel-7": "^4.3.0",
     "@mrbuilder/plugin-babel": "^4.3.0",
     "@mrbuilder/plugin-typescript": "^4.3.0",
+    "@mrbuilder/plugin-jest": "^4.3.0",
+    "@mrbuilder/preset-test": "^4.3.0",
     "typescript": "^4.0.2"
   },
   "bin": {
     "flump-builder": "./bin/builder.js",
-    "flump-builder-tsc": "./bin/builder.js"
+    "flump-builder-tsc": "./bin/builder.js",
+    "flump-builder-test": "./bin/builder.js"
   },
   "mrbuilder": {
     "plugins": [
@@ -25,12 +28,33 @@
       ]
     ],
     "env": {
-      "tsc": [
-        [
-          "@mrbuilder/plugin-webpack",
-          false
+      "tsc": {
+        "plugins": [
+          [
+            "@mrbuilder/plugin-webpack",
+            false
+          ]
         ]
-      ]
+      },
+      "test": {
+        "plugins": [
+          [
+            "@mrbuilder/cli",
+            {
+              "bin": "@mrbuilder/plugin-jest/bin/cli"
+            }
+          ],
+          [
+            "@mrbuilder/plugin-karma",
+            false
+          ],
+          [
+            "@mrbuilder/plugin-mocha",
+            false
+          ],
+          "@mrbuilder/plugin-jest"
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.base.json",
+  "references": [
+    {
+      "path": "actions/add"
+    },
+    {
+      "path": "actions/exec"
+    },
+    {
+      "path": "prompts/input"
+    },
+    {
+      "path": "prompts/select"
+    },
+    {
+      "path": "core/registry"
+    },
+    {
+      "path": "core/runner"
+    },
+    {
+      "path": "builder"
+    }
+  ]
+}

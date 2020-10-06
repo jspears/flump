@@ -8,7 +8,9 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@flump/registry": "^0.0.1"
+    "@flump/registry": "^0.0.1",
+    "@flump/utils": "^0.0.1",
+    "figures": "^3.2.0"
   },
   "devDependencies": {
     "@flump/builder": "^0.0.1"

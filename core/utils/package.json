@@ -1,0 +1,24 @@
+{
+  "name": "@flump/utils",
+  "version": "0.0.1",
+  "description": "",
+  "types": "src",
+  "main": "lib",
+  "source": "src",
+  "scripts": {
+    "prepare": "tsc",
+    "test": "MRBUILDER_PROFILE=test flump-builder-test"
+  },
+  "author": "Justin Spears <speajus@gmail.com>",
+  "license": "BSD0",
+  "dependencies": {
+    "@flump/registry": "^0.0.1",
+    "ink": "^3.0.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@flump/builder": "^0.0.1"
+  }
+}
